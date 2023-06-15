@@ -1,20 +1,9 @@
 <?php
 
-/**
- * @SWG\Parameter(
- *      description="ID of data",
- *      format="int64",
- *      in="path",
- *      name="id",
- *      required=true,
- *      type="integer"
- * )
- */
-
-$versiSatu = "../routes/versiSatu";
+$main = "../apps/routes/main";
 
 $routes = [];
-foreach (glob("{$versiSatu}/*.php") as $filename) {
+foreach (glob("{$main}/*.php") as $filename) {
     $route = require($filename);
     $routes = array_merge($routes, $route);
 }
